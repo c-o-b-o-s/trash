@@ -40,8 +40,9 @@ stripe-pricing-table {
 
 /* Instagram Button Styling */
 .social {
-  text-align: center;
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
 }
 
 .instagram-button {
