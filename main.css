@@ -58,4 +58,9 @@ stripe-pricing-table {
 }
 
 .instagram-button i {
-  margin-ri
+  margin-right: 8px;
+}
+
+.instagram-button:hover {
+  background-color: #c72c60;
+}
