@@ -22,9 +22,8 @@ body {
 .logo-image {
   max-width: 100%;
   height: auto;
-  width: 220px; /* smaller logo */
   display: block;
-  margin: 0 auto; /* center the image */
+  margin: 0 auto;
 }
 
 /* Stripe Pricing Table Styling */
