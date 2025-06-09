@@ -1,11 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Stripe Page</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.Testing123 Hi kitten</p>
-<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1RXuGZJKNGWjF7PONHVrYctZ"
-publishable-key="pk_live_51OkzSfJKNGWjF7POHkm2bGR14hJYLkVWP3dmZ6q0qjk5HrkRzL3nIMVOi3dMNscK5xkkdlQmcKjoHWZVdft18pwF006JeneBIP">
-</stripe-pricing-table>
+  <div class="container">
+    <header>
+      <h1>Hello World</h1>
+      <p class="subtitle">I'm hosted with GitHub Pages. Testing123. Hi kitten.</p>
+    </header>
+
+    <section class="pricing">
+      <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+      <stripe-pricing-table
+        pricing-table-id="prctbl_1RXuGZJKNGWjF7PONHVrYctZ"
+        publishable-key="pk_live_51OkzSfJKNGWjF7POHkm2bGR14hJYLkVWP3dmZ6q0qjk5HrkRzL3nIMVOi3dMNscK5xkkdlQmcKjoHWZVdft18pwF006JeneBIP">
+      </stripe-pricing-table>
+    </section>
+  </div>
 </body>
 </html>
