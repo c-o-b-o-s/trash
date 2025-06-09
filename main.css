@@ -13,26 +13,22 @@ body {
   padding: 2rem;
 }
 
-/* Header Styling */
-header {
+/* Logo Header */
+.logo-header {
   text-align: center;
-  margin-bottom: 0.5rem; /* reduced spacing */
-}
-
-h1 {
-  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
-.subtitle {
-  font-size: 1.2rem;
-  color: #666;
+.logo-image {
+  max-width: 100%;
+  height: auto;
+  width: 300px;
 }
 
 /* Stripe Pricing Table Styling */
 .pricing {
-  margin-top: 0.5rem; /* reduced spacing above */
-  margin-bottom: 0.5rem; /* reduced spacing below */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 stripe-pricing-table {
@@ -43,7 +39,7 @@ stripe-pricing-table {
 .social {
   display: flex;
   justify-content: center;
-  margin: 0.5rem 0; /* reduced spacing */
+  margin: 0.5rem 0;
 }
 
 .instagram-button {
@@ -63,5 +59,8 @@ stripe-pricing-table {
 }
 
 .instagram-button:hover {
+  background-color: #005ea8;
+}
+
   background-color: #005ea8;
 }
