@@ -1,3 +1,4 @@
+/* General Page Styles */
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -5,12 +6,14 @@ body {
   color: #333;
 }
 
+/* Layout Container */
 .container {
   max-width: 800px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+/* Header Styling */
 header {
   text-align: center;
   margin-bottom: 2rem;
@@ -26,6 +29,7 @@ h1 {
   color: #666;
 }
 
+/* Stripe Pricing Table Styling */
 .pricing {
   margin-top: 2rem;
 }
@@ -33,3 +37,24 @@ h1 {
 stripe-pricing-table {
   width: 100%;
 }
+
+/* Instagram Button Styling */
+.social {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.instagram-button {
+  display: inline-block;
+  background-color: #e1306c;
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.instagram-button i {
+  margin-ri
