@@ -46,7 +46,7 @@ stripe-pricing-table {
 
 .instagram-button {
   display: inline-block;
-  background-color: #0074d4;
+  background-color: #59a33b; /* updated green */
   color: white;
   text-decoration: none;
   padding: 12px 20px;
@@ -61,9 +61,5 @@ stripe-pricing-table {
 }
 
 .instagram-button:hover {
-  background-color: #005ea8;
-}
-
-
-  background-color: #005ea8;
+  background-color: #4a8730; /* darker green on hover */
 }
