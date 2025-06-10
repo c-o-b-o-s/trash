@@ -1,56 +1,40 @@
-/* General Page Styles */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mikro</title>
 
-/* Layout Container */
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 1.5rem; /* reduced for tighter layout */
-}
+  <!-- Font Awesome for Instagram icon (no longer used, but can keep if needed) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-/* Logo Header */
-.logo-header {
-  text-align: center;
-  margin-bottom: 0.25rem; /* tighter spacing below logo */
-}
+  <!-- Your main stylesheet -->
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Logo Header -->
+    <header class="logo-header">
+      <img src="resizedlogo.png" alt="Mikro Logo" class="logo-image" />
+    </header>
+  </div>
 
-.logo-image {
-  width: 300px;
-  height: auto;
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
-}
+  <!-- Stripe Pricing Table: Full Width -->
+  <section class="pricing">
+    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
+    <stripe-pricing-table
+      pricing-table-id="prctbl_1RXuGZJKNGWjF7PONHVrYctZ"
+      publishable-key="pk_live_51OkzSfJKNGWjF7POHkm2bGR14hJYLkVWP3dmZ6q0qjk5HrkRzL3nIMVOi3dMNscK5xkkdlQmcKjoHWZVdft18pwF006JeneBIP">
+    </stripe-pricing-table>
+  </section>
 
-/* Stripe Pricing Table Styling */
-.pricing {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-stripe-pricing-table {
-  width: 100%;
-}
-
-/* Instagram Icon Styling */
-.social {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem 0;
-}
-
-.instagram-icon-link {
-  display: inline-block;
-  height: 48px; /* matches original button height */
-}
-
-.instagram-icon {
-  height: 100%;
-  width: auto;
-  display: block;
-}
+  <div class="container">
+    <!-- Instagram Icon Button -->
+    <div class="social">
+      <a href="https://instagram.com/mikroplants" target="_blank" class="instagram-icon-link">
+        <img src="Instagram_icon.png" alt="Instagram" class="instagram-icon" />
+      </a>
+    </div>
+  </div>
+</body>
+</html>
