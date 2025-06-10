@@ -37,20 +37,29 @@ stripe-pricing-table {
   width: 100%;
 }
 
-/* Instagram Icon Styling */
+/* Instagram Button Styling */
 .social {
   display: flex;
   justify-content: center;
   margin: 0.5rem 0;
 }
 
-.instagram-icon-link {
+.instagram-button {
   display: inline-block;
-  height: 48px; /* matches original button height */
+  background-color: #59a33b; /* updated green */
+  color: white;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
 }
 
-.instagram-icon {
-  height: 100%;
-  width: auto;
-  display: block;
+.instagram-button i {
+  margin-right: 8px;
+}
+
+.instagram-button:hover {
+  background-color: #4a8730; /* darker green on hover */
 }
