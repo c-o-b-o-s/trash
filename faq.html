@@ -32,9 +32,34 @@
       color: #555;
       line-height: 1.5;
     }
+
+    .logo-header {
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    .logo-image {
+      width: 300px;
+      height: auto;
+      max-width: 100%;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .logo-link {
+      display: inline-block;
+    }
   </style>
 </head>
 <body>
+  <!-- Clickable Logo Header -->
+  <header class="logo-header">
+    <a href="index.html" class="logo-link">
+      <img src="resizedlogo.png" alt="Mikro Logo" class="logo-image" />
+    </a>
+  </header>
+
+  <!-- FAQ Content -->
   <div class="faq-section">
     <h1>Frequently Asked Questions</h1>
 
@@ -55,7 +80,7 @@
 
     <div class="faq-item">
       <h3>Can I subscribe for regular deliveries?</h3>
-      <p>Yes! Visit our main page to view our subscription options via Stripe.</p>
+      <p>Yes! Send us a DM on Instagram.</p>
     </div>
   </div>
 </body>
