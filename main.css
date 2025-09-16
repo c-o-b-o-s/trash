@@ -37,20 +37,7 @@ stripe-pricing-table {
   width: 100%;
 }
 
-/* Instagram Icon Styling */
-.social {
-  display: flex;
-  justify-content: center;
-  margin: 0.5rem 0;
-}
-
-.instagram-icon-link {
-  display: inline-block;
-  height: 48px; /* matches original button height */
-}
-
-.instagram-icon {
-  height: 100%;
-  width: auto;
-  display: block;
+/* Footer */
+.footer {
+  margin-top: 1.5rem;
 }
