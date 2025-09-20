@@ -12,6 +12,35 @@
   <meta property="og:url" content="https://tonytrash.com" />
   <meta name="twitter:card" content="summary_large_image" />
 
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELNMPWCLMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ELNMPWCLMS');
+  </script>
+
+  <!-- Scroll Tracking -->
+  <script>
+    document.addEventListener("scroll", function() {
+      const scrollPosition = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      // 50% scroll
+      if (!window.scroll50 && scrollPosition >= pageHeight * 0.5) {
+        gtag('event', 'scroll_50', { event_category: 'engagement', event_label: 'Scrolled 50%' });
+        window.scroll50 = true;
+      }
+
+      // 90% scroll
+      if (!window.scroll90 && scrollPosition >= pageHeight * 0.9) {
+        gtag('event', 'scroll_90', { event_category: 'engagement', event_label: 'Scrolled 90%' });
+        window.scroll90 = true;
+      }
+    });
+  </script>
+
   <!-- Font Awesome (optional) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -22,12 +51,14 @@
   <div class="container">
     <!-- Logo Header -->
     <header class="logo-header">
-      <img src="VALETTRASH.png" alt="Mikro Logo" class="logo-image" />
+      <img src="VALETTRASH.png" alt="Mikro Logo" class="logo-image"
+           onclick="gtag('event', 'click_logo', { event_category: 'navigation', event_label: 'Logo Header' });" />
     </header>
   </div>
 
   <!-- Stripe Pricing Table: Full Width -->
-  <section class="pricing">
+  <section class="pricing" id="pricing" 
+           onclick="gtag('event', 'view_pricing', { event_category: 'engagement', event_label: 'Stripe Pricing Table' });">
     <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
     <stripe-pricing-table
       pricing-table-id="prctbl_1S6vEXJKNGWjF7POxOURABQj"
@@ -39,7 +70,10 @@
   <footer class="footer">
     <div class="container">
       <p style="text-align: center; font-size: 0.9rem; color: #777;">
-        <a href="faq.html" style="color: #0074d4; text-decoration: none;">Frequently Asked Questions</a>
+        <a href="faq.html" style="color: #0074d4; text-decoration: none;"
+           onclick="gtag('event', 'click_faq', { event_category: 'navigation', event_label: 'FAQ Footer Link' });">
+           Frequently Asked Questions
+        </a>
       </p>
     </div>
   </footer>
