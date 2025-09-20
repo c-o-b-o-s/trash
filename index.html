@@ -51,19 +51,49 @@
   <div class="container">
     <!-- Logo Header -->
     <header class="logo-header">
-      <img src="VALETTRASH.png" alt="Mikro Logo" class="logo-image"
+      <img src="VALETTRASH.png" alt="Valet Trash Logo" class="logo-image"
            onclick="gtag('event', 'click_logo', { event_category: 'navigation', event_label: 'Logo Header' });" />
     </header>
   </div>
 
-  <!-- Stripe Pricing Table: Full Width -->
-  <section class="pricing" id="pricing" 
-           onclick="gtag('event', 'view_pricing', { event_category: 'engagement', event_label: 'Stripe Pricing Table' });">
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-    <stripe-pricing-table
-      pricing-table-id="prctbl_1S6vEXJKNGWjF7POxOURABQj"
-      publishable-key="pk_live_51OkzSfJKNGWjF7POHkm2bGR14hJYLkVWP3dmZ6q0qjk5HrkRzL3nIMVOi3dMNscK5xkkdlQmcKjoHWZVdft18pwF006JeneBIP">
-    </stripe-pricing-table>
+  <!-- Custom Pricing Section -->
+  <section class="pricing" id="pricing">
+    <div class="plan">
+      <img src="basic-icon.png" alt="Basic Plan Icon" class="plan-icon">
+      <h2>Basic Valet Trash</h2>
+      <p>One Pickup Every Thursday</p>
+      <p class="price">$15 / month</p>
+      <a href="https://buy.stripe.com/dRm4gA1k80NA73scL15kk06"
+         class="subscribe-button"
+         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Basic Plan' });">
+         Subscribe
+      </a>
+    </div>
+
+    <div class="plan highlight">
+      <div class="badge">Most popular</div>
+      <img src="standard-icon.png" alt="Standard Plan Icon" class="plan-icon">
+      <h2>Standard Valet Trash</h2>
+      <p>Every Monday & Thursday</p>
+      <p class="price">$20 / month</p>
+      <a href="https://buy.stripe.com/14AaEYd2Q0NAcnM3ar5kk07"
+         class="subscribe-button"
+         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Standard Plan' });">
+         Subscribe
+      </a>
+    </div>
+
+    <div class="plan">
+      <img src="premium-icon.png" alt="Premium Plan Icon" class="plan-icon">
+      <h2>Premium Valet Trash</h2>
+      <p>Every Monday, Thursday & Saturday</p>
+      <p class="price">$30 / month</p>
+      <a href="https://buy.stripe.com/8x2aEYgf253Q2NcaCT5kk08"
+         class="subscribe-button"
+         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Premium Plan' });">
+         Subscribe
+      </a>
+    </div>
   </section>
 
   <!-- Footer with FAQ Link -->

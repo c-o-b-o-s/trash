@@ -1,7 +1,7 @@
 /* General Page Styles */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background-color: #f9f9f9;
   color: #333;
 }
@@ -10,13 +10,13 @@ body {
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1.5rem; /* reduced for tighter layout */
+  padding: 1.5rem;
 }
 
 /* Logo Header */
 .logo-header {
   text-align: center;
-  margin-bottom: 0.25rem; /* tighter spacing below logo */
+  margin-bottom: 0.25rem;
 }
 
 .logo-image {
@@ -27,17 +27,126 @@ body {
   margin: 0 auto;
 }
 
-/* Stripe Pricing Table Styling */
+/* Pricing Section */
 .pricing {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  background-color: #f9f9f9;
+  padding: 40px 20px;
 }
 
-stripe-pricing-table {
-  width: 100%;
+.plan {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  width: 280px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+  transform: translateY(-4px);
+}
+
+.plan-icon {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.plan h2 {
+  font-size: 1.25rem;
+  margin: 10px 0;
+}
+
+.plan p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+/* Subscribe Buttons */
+.subscribe-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #6ec487;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-button:hover {
+  background-color: #5cb976;
+}
+
+/* Highlighted Plan (Standard) */
+.highlight {
+  border: 2px solid #6ec487;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #6ec487;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
 /* Footer */
 .footer {
   margin-top: 1.5rem;
+  text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .pricing {
+    gap: 15px;
+  }
+  .plan {
+    width: 45%; /* 2 per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+  }
+  .plan {
+    width: 90%; /* Full width on mobile */
+  }
+}
+
+/* Spotlight effect for highlighted plan on larger screens */
+@media (min-width: 900px) {
+  .highlight {
+    transform: scale(1.05);
+    z-index: 2;
+    order: 2; /* Always force highlight to middle in row of 3 */
+  }
+  .plan:first-child {
+    order: 1;
+  }
+  .plan:last-child {
+    order: 3;
+  }
 }
