@@ -41,6 +41,21 @@
     });
   </script>
 
+  <!-- Mobile-specific spacing tweaks -->
+  <style>
+    @media (max-width: 600px) {
+      .logo-header {
+        margin-bottom: 0; /* tighter spacing below logo */
+      }
+      .pricing {
+        margin-top: 0.5rem; /* bring pricing closer on small screens */
+      }
+      .footer {
+        margin-top: 1rem; /* tighter footer spacing */
+      }
+    }
+  </style>
+
   <!-- Font Awesome (optional) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
@@ -99,11 +114,17 @@
   <!-- Footer with FAQ Link -->
   <footer class="footer">
     <div class="container">
-      <p style="text-align: center; font-size: 0.9rem; color: #777;">
+      <p style="text-align: center; font-size: 0.9rem; color: #777; margin-bottom: 0.5rem;">
         <a href="faq.html" style="color: #0074d4; text-decoration: none;"
            onclick="gtag('event', 'click_faq', { event_category: 'navigation', event_label: 'FAQ Footer Link' });">
            Frequently Asked Questions
         </a>
+      </p>
+      <p style="text-align: center; font-size: 0.9rem; color: #555; margin-bottom: 0.25rem;">
+        Contact: <a href="mailto:info@tonytrash.com" style="color: #0074d4; text-decoration: none;">info@tonytrash.com</a>
+      </p>
+      <p style="text-align: center; font-size: 0.8rem; color: #aaa;">
+        © 2025 Valet Trash. All rights reserved.
       </p>
     </div>
   </footer>

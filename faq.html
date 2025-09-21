@@ -15,31 +15,33 @@
     .faq-section h1 {
       text-align: center;
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
 
     .faq-item {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
 
     .faq-item h3 {
-      margin-bottom: 0.3rem;
-      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
     }
 
-    .faq-item p {
+    .faq-item p,
+    .faq-item ul {
       margin: 0;
       color: #555;
-      line-height: 1.5;
+      line-height: 1.6;
     }
 
     .logo-header {
       text-align: center;
       margin-top: 2rem;
+      margin-bottom: 2rem;
     }
 
     .logo-image {
-      width: 300px;
+      width: 500px;
       height: auto;
       max-width: 100%;
       display: block;
@@ -49,13 +51,28 @@
     .logo-link {
       display: inline-block;
     }
+
+    /* Mobile-specific tweaks */
+    @media (max-width: 600px) {
+      .logo-header {
+        margin-bottom: 0; /* tighter spacing below logo */
+      }
+
+      .faq-section {
+        padding-top: 1rem; /* pull questions closer to logo */
+      }
+
+      .footer {
+        margin-top: 1rem; /* tighter footer spacing */
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Clickable Logo Header -->
   <header class="logo-header">
     <a href="index.html" class="logo-link">
-      <img src="VALETTRASH1.png" alt="Mikro Logo" class="logo-image" />
+      <img src="VALETTRASH1.png" alt="Valet Trash Logo" class="logo-image" />
     </a>
   </header>
 
@@ -64,14 +81,13 @@
     <h1>Frequently Asked Questions</h1>
 
     <div class="faq-item">
-    <h3>What are the days?</h3>
-    <ul>
-    <li>Basic: Every Thursday</li>
-    <li>Standard: Every Monday and Thursday</li>
-    <li>Premium: Every Monday, Thursday, and Saturday</li>
-    </ul>
+      <h3>What are the days?</h3>
+      <ul>
+        <li>Basic: Every Thursday</li>
+        <li>Standard: Every Monday and Thursday</li>
+        <li>Premium: Every Monday, Thursday, and Saturday</li>
+      </ul>
     </div>
-
 
     <div class="faq-item">
       <h3>Is there a set time?</h3>
@@ -80,17 +96,34 @@
 
     <div class="faq-item">
       <h3>What is included?</h3>
-      <p>All subscriptions include weekly trash services, we also spray febreeze in the hallway to keep things smelling fresh.</p>
+      <p>All subscriptions include weekly trash services. We also spray Febreze in the hallway to keep things smelling fresh.</p>
     </div>
 
     <div class="faq-item">
-  <h3>What is the cancellation policy?</h3>
-  <p>You can cancel at any time by visiting 
-    <a href="https://billing.stripe.com/p/login/eVq14ofaYeEqfzY26n5kk00" target="_blank">
-      your Stripe billing portal
-    </a>.
-  </p>
-</div>
+      <h3>What is the cancellation policy?</h3>
+      <p>You can cancel at any time by visiting 
+        <a href="https://billing.stripe.com/p/login/eVq14ofaYeEqfzY26n5kk00" target="_blank">
+          your Stripe billing portal
+        </a>.
+      </p>
+    </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p style="text-align: center; font-size: 0.9rem; color: #777; margin-bottom: 0.5rem;">
+        <a href="faq.html" style="color: #0074d4; text-decoration: none;">
+           Frequently Asked Questions
+        </a>
+      </p>
+      <p style="text-align: center; font-size: 0.9rem; color: #555; margin-bottom: 0.25rem;">
+        Contact: <a href="mailto:info@tonytrash.com" style="color: #0074d4; text-decoration: none;">info@tonytrash.com</a>
+      </p>
+      <p style="text-align: center; font-size: 0.8rem; color: #aaa;">
+        © 2025 Valet Trash. All rights reserved.
+      </p>
+    </div>
+  </footer>
 </body>
 </html>
