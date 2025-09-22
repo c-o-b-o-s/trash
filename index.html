@@ -103,51 +103,6 @@
     </div>
   </section>
 
-  <!-- Testimonial Carousel -->
-  <section class="testimonials">
-    <div class="testimonial-slider" id="testimonialSlider">
-
-      <!-- Original set -->
-      <div class="testimonial-slide">
-        <img src="E44A8F97-3043-444B-8B79-ABC7AF8421DD.jpeg" alt="Customer 1" class="testimonial-avatar">
-        <p>"Reliable and convenient — I never worry about trash day anymore!"</p>
-        <span>- Kat S.</span>
-      </div>
-
-      <div class="testimonial-slide">
-        <img src="963433BA-B40D-4DD3-9F31-9EEA0772D247_1_105_c.jpeg" alt="Customer 2" class="testimonial-avatar">
-        <p>"Affordable service and very professional."</p>
-        <span>- Luke H.</span>
-      </div>
-
-      <div class="testimonial-slide">
-        <img src="2BA9E57A-AD64-4613-AFC5-B04334D40F73_1_105_c.jpeg" alt="Customer 3" class="testimonial-avatar">
-        <p>"Super easy signup and they always show up on time."</p>
-        <span>- Vanessa A.</span>
-      </div>
-
-      <!-- Duplicate set for seamless loop -->
-      <div class="testimonial-slide">
-        <img src="E44A8F97-3043-444B-8B79-ABC7AF8421DD.jpeg" alt="Customer 1" class="testimonial-avatar">
-        <p>"Reliable and convenient — I never worry about trash day anymore!"</p>
-        <span>- Kat S.</span>
-      </div>
-
-      <div class="testimonial-slide">
-        <img src="963433BA-B40D-4DD3-9F31-9EEA0772D247_1_105_c.jpeg" alt="Customer 2" class="testimonial-avatar">
-        <p>"Affordable service and very professional."</p>
-        <span>- Luke H.</span>
-      </div>
-
-      <div class="testimonial-slide">
-        <img src="2BA9E57A-AD64-4613-AFC5-B04334D40F73_1_105_c.jpeg" alt="Customer 3" class="testimonial-avatar">
-        <p>"Super easy signup and they always show up on time."</p>
-        <span>- Vanessa A.</span>
-      </div>
-
-    </div>
-  </section>
-
   <!-- Footer with FAQ Link -->
   <footer class="footer">
     <div class="container">
@@ -165,58 +120,5 @@
       </p>
     </div>
   </footer>
-
-  <!-- Testimonial Slider Script -->
-  <script>
-    const slider = document.getElementById('testimonialSlider');
-
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    slider.addEventListener('mousedown', (e) => {
-      isDown = true;
-      slider.style.animationPlayState = 'paused';
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('mouseleave', () => {
-      isDown = false;
-      slider.style.animationPlayState = 'running';
-    });
-
-    slider.addEventListener('mouseup', () => {
-      isDown = false;
-      slider.style.animationPlayState = 'running';
-    });
-
-    slider.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-
-    slider.addEventListener('touchstart', (e) => {
-      isDown = true;
-      slider.style.animationPlayState = 'paused';
-      startX = e.touches[0].pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-    });
-
-    slider.addEventListener('touchend', () => {
-      isDown = false;
-      slider.style.animationPlayState = 'running';
-    });
-
-    slider.addEventListener('touchmove', (e) => {
-      if (!isDown) return;
-      const x = e.touches[0].pageX - slider.offsetLeft;
-      const walk = (x - startX) * 2;
-      slider.scrollLeft = scrollLeft - walk;
-    });
-  </script>
 </body>
 </html>
