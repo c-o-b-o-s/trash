@@ -155,14 +155,14 @@ body {
 
 @media (max-width: 600px) {
   .container {
-    padding-top: 1rem;   /* mobile breathing room */
-    padding-bottom: 1rem;
+    padding-top: 0.5rem;   /* mobile breathing room */
+    padding-bottom: 0.5rem;
   }
-  .logo-header { margin-bottom: 1rem; }
+  .logo-header { margin-bottom: 0.5rem; }
   .pricing {
     flex-direction: column;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding-top: 0;
   }
   .plan { width: 90%; } /* Full width on mobile */
