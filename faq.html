@@ -2,8 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>FAQ – Valet Trash</title>
+  <meta name="description" content="Answers about pickup days, times, what’s included, cancellations, and payment security for TonyTrash valet trash service." />
+  <link rel="canonical" href="https://tonytrash.com/faq.html" />
+
+  <!-- Favicons (optional) -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+  <!-- Preconnects for perf -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELNMPWCLMS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ELNMPWCLMS');
+  </script>
+
   <link rel="stylesheet" href="main.css" />
   <style>
     .faq-section {
@@ -11,81 +31,109 @@
       margin: 0 auto;
       padding: 1.5rem; /* tightened desktop spacing */
     }
-
     .faq-section h1 {
       text-align: center;
       font-size: 2rem;
       margin-bottom: 1.5rem; /* tightened spacing */
     }
-
-    .faq-item {
-      margin-bottom: 1.5rem;
-    }
-
-    .faq-item h3 {
-      margin-bottom: 0.5rem;
-      font-size: 1.2rem;
-    }
-
-    .faq-item p,
-    .faq-item ul {
-      margin: 0;
-      color: #555;
-      line-height: 1.6;
-    }
-
-    .logo-header {
-      text-align: center;
-      margin-top: 1.5rem; /* tightened desktop spacing */
-      margin-bottom: 1.5rem;
-    }
-
-    .logo-image {
-      width: 450px;
-      height: auto;
-      max-width: 100%;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .logo-link {
-      display: inline-block;
-    }
+    .faq-item { margin-bottom: 1.5rem; }
+    .faq-item h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+    .faq-item p, .faq-item ul { margin: 0; color: #555; line-height: 1.6; }
+    .logo-header { text-align: center; margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .logo-link { display: inline-block; }
 
     /* Mobile-specific tweaks */
     @media (max-width: 600px) {
-      .logo-header {
-        margin-bottom: 0; /* tighter spacing below logo */
-      }
-
-      .faq-section {
-        padding-top: 1rem; /* pull questions closer to logo */
-      }
-
-      .footer {
-        margin-top: 1rem; /* tighter footer spacing */
-      }
+      .logo-header { margin-bottom: 0; }
+      .faq-section { padding-top: 1rem; }
+      .footer { margin-top: 1rem; }
     }
   </style>
+
+  <!-- FAQPage structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are the days?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Basic: Every Thursday. Standard: Every Monday and Thursday. Premium: Every Monday, Thursday, and Saturday."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is there a set time?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Please set your trash outside of your door no earlier than 7pm and no later than 9pm on pickup days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is my personal and payment information safe?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Payments are processed securely through Stripe. We never store your card details, and your personal information is kept private and encrypted."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is included?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "All subscriptions include weekly trash services with text reminders on pickup days. We also spray a freshener in the hallway to keep things smelling clean."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What if I forget to put my trash out?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Please hold onto it until the next pickup day. We can’t return outside the scheduled hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the cancellation policy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "There are no long-term contracts. You can manage or cancel your subscription anytime through our billing portal."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-  <!-- Clickable Logo Header -->
+  <!-- Clickable Logo Header (same formatting as homepage) -->
   <header class="logo-header">
-    <a href="index.html" class="logo-link">
-      <img src="VALETTRASH1.png" alt="Valet Trash Logo" class="logo-image" />
+    <a href="/" class="logo-link"
+       onclick="gtag('event','click_logo',{event_category:'navigation',event_label:'FAQ Logo'});"
+       aria-label="Go to homepage">
+      <img
+        src="logo.svg"
+        alt="TonyTrash Valet Trash"
+        width="500"
+        height="263"
+        class="logo-image"
+        decoding="async" />
     </a>
   </header>
 
   <!-- FAQ Content -->
-  <div class="faq-section">
+  <main class="faq-section" aria-label="Frequently Asked Questions">
     <h1>Frequently Asked Questions</h1>
 
     <div class="faq-item">
       <h3>What are the days?</h3>
       <ul>
         <li>Basic: Every Thursday</li>
-        <li>Standard: Every Monday and Thursday</li>
-        <li>Premium: Every Monday, Thursday, and Saturday</li>
+        <li>Standard: Every Monday &amp; Thursday</li>
+        <li>Premium: Every Monday, Thursday &amp; Saturday</li>
       </ul>
     </div>
 
@@ -93,31 +141,31 @@
       <h3>Is there a set time?</h3>
       <p>Please set your trash outside of your door no earlier than 7pm and no later than 9pm on pickup days.</p>
     </div>
-    
-     <div class="faq-item">
+
+    <div class="faq-item">
       <h3>Is my personal and payment information safe?</h3>
       <p>Absolutely. All payments are processed securely through Stripe, a leading global payment platform trusted by millions of businesses. We never store your card details directly, and your personal information (like your address) is kept private and only used to provide service. Your data is encrypted and protected end-to-end.</p>
     </div>
-    
+
     <div class="faq-item">
       <h3>What is included?</h3>
-      <p>All subscriptions include weekly trash services with text reminders on pickup days. We also spray Febreze in the hallway to keep things smelling fresh.</p>
+      <p>All subscriptions include weekly trash services with text reminders on pickup days. We also spray a freshener in the hallway to keep things smelling clean.</p>
     </div>
-    
+
     <div class="faq-item">
       <h3>What if I forget to put my trash out?</h3>
       <p>No worries — just hold onto it until the next pickup day. To keep things fair for everyone, we can’t come back outside the scheduled hours.</p>
     </div>
-    
+
     <div class="faq-item">
       <h3>What is the cancellation policy?</h3>
-      <p>There are no long-term contracts. You can manage or cancel your subscription anytime through our billing portal:  
-        <a href="https://billing.stripe.com/p/login/eVq14ofaYeEqfzY26n5kk00" target="_blank">
+      <p>There are no long-term contracts. You can manage or cancel your subscription anytime through our billing portal:
+        <a href="https://billing.stripe.com/p/login/eVq14ofaYeEqfzY26n5kk00" target="_blank" rel="noopener noreferrer">
           your Stripe billing portal
         </a>.
       </p>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer">

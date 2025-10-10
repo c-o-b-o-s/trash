@@ -1,16 +1,33 @@
+/* -------------------------
+   Design Tokens (easy tweaks)
+-------------------------- */
+:root{
+  --bg:#f9f9f9;
+  --text:#333;
+  --muted:#555;
+  --border:#ddd;
+  --brand:#6ec487;
+  --brand-hover:#5cb976;
+  --link:#0074d4;
+  --shadow-sm:0 4px 10px rgba(0,0,0,0.05);
+  --shadow-md:0 6px 14px rgba(0,0,0,0.1);
+}
+
 /* General Page Styles */
+*{box-sizing:border-box}
+html{-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  background-color: #f9f9f9;
-  color: #333;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 /* Layout Container */
 .container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
 }
 
 /* Logo Header */
@@ -20,9 +37,9 @@ body {
 }
 
 .logo-image {
-  width: 500px;
-  height: auto;
+  /* Width/height set in HTML (500×263) to prevent layout shift */
   max-width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
 }
@@ -33,29 +50,35 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  background-color: #f9f9f9;
+  background-color: var(--bg);
   padding: 40px 20px;
 }
 
 .plan {
-  background: white;
-  border: 1px solid #ddd;
+  background: #fff;
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
   text-align: center;
   width: 280px;
   position: relative;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  box-shadow: var(--shadow-sm);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
 }
 
 .plan:hover {
   transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
 }
 
 .plan-icon {
   width: 60px;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
   margin-bottom: 15px;
+  image-rendering: -webkit-optimize-contrast;
 }
 
 .plan h2 {
@@ -65,35 +88,40 @@ body {
 
 .plan p {
   margin: 6px 0;
-  color: #555;
+  color: var(--muted);
 }
 
 .price {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 12px 0;
+  color: #222;
 }
 
 /* Subscribe Buttons */
 .subscribe-button {
   display: inline-block;
   padding: 12px 20px;
-  background-color: #6ec487;
-  color: white;
+  background-color: var(--brand);
+  color: #fff;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-weight: 700;
+  transition: background-color 0.2s ease, transform 0.06s ease;
+  outline: none;
 }
 
-.subscribe-button:hover {
-  background-color: #5cb976;
+.subscribe-button:hover { background-color: var(--brand-hover); }
+.subscribe-button:active{ transform: translateY(1px); }
+.subscribe-button:focus-visible{
+  outline: 3px solid color-mix(in oklab, var(--brand) 60%, white);
+  outline-offset: 2px;
 }
 
 /* Highlighted Plan (Standard) */
 .highlight {
-  border: 2px solid #6ec487;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+  border: 2px solid var(--brand);
+  box-shadow: var(--shadow-md);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
@@ -102,12 +130,13 @@ body {
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
-  background: #6ec487;
-  color: white;
+  background: var(--brand);
+  color: #fff;
   padding: 4px 12px;
   border-radius: 20px;
   font-size: 0.8rem;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 /* Footer */
@@ -116,14 +145,12 @@ body {
   text-align: center;
 }
 
+.footer a{ color: var(--link); }
+
 /* Responsive Design */
 @media (max-width: 900px) {
-  .pricing {
-    gap: 15px;
-  }
-  .plan {
-    width: 45%; /* 2 per row on tablets */
-  }
+  .pricing { gap: 15px; }
+  .plan { width: 45%; } /* 2 per row on tablets */
 }
 
 @media (max-width: 600px) {
@@ -131,9 +158,7 @@ body {
     flex-direction: column;
     align-items: center;
   }
-  .plan {
-    width: 90%; /* Full width on mobile */
-  }
+  .plan { width: 90%; } /* Full width on mobile */
 }
 
 /* Spotlight effect for highlighted plan on larger screens */
@@ -143,10 +168,12 @@ body {
     z-index: 2;
     order: 2; /* Always force highlight to middle in row of 3 */
   }
-  .plan:first-child {
-    order: 1;
-  }
-  .plan:last-child {
-    order: 3;
-  }
+  .plan:first-child { order: 1; }
+  .plan:last-child  { order: 3; }
+}
+
+/* Reduced Motion: calmer interactions */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+  .plan:hover, .highlight { transform: none !important; }
 }

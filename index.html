@@ -2,21 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Valet Trash</title>
+  <meta name="description" content="Reliable valet trash pickup for your apartment. Simple plans, fast sign-up, and friendly local service." />
+  <link rel="canonical" href="https://tonytrash.com/" />
 
-  <!-- Open Graph / Social Preview -->
+  <!-- Favicons (optional; harmless if files aren’t present yet) -->
+  <link rel="icon" type="image/png" href="favicon.png">
+
+
+  <!-- Open Graph / Social Preview (use a 1200×630 raster) -->
   <meta property="og:title" content="Valet Trash Service" />
   <meta property="og:description" content="Weekly trash pickup. Fresh, reliable, and convenient. Sign up today!" />
-  <meta property="og:image" content="https://tonytrash.com/VALETTRASH.png" />
-  <meta property="og:url" content="https://tonytrash.com" />
+  <meta property="og:image" content="https://tonytrash.com/og-1200x630.png" />
+  <meta property="og:url" content="https://tonytrash.com/" />
   <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Preconnects for perf -->
+  <link rel="preconnect" href="https://www.googletagmanager.com" />
+  <link rel="preconnect" href="https://www.google-analytics.com" />
+  <link rel="preconnect" href="https://buy.stripe.com" />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ELNMPWCLMS"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag(){ dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-ELNMPWCLMS');
   </script>
@@ -31,7 +42,6 @@
         gtag('event', 'scroll_50', { event_category: 'engagement', event_label: 'Scrolled 50%' });
         window.scroll50 = true;
       }
-
       if (!window.scroll90 && scrollPosition >= pageHeight * 0.9) {
         gtag('event', 'scroll_90', { event_category: 'engagement', event_label: 'Scrolled 90%' });
         window.scroll90 = true;
@@ -41,6 +51,10 @@
 
   <!-- Mobile-specific spacing tweaks -->
   <style>
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0);
+      white-space:nowrap; border:0;
+    }
     @media (max-width: 600px) {
       .logo-header { margin-bottom: 0; }
       .pricing { margin-top: 0.5rem; }
@@ -48,79 +62,92 @@
     }
   </style>
 
-  <!-- Font Awesome (optional) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="main.css" />
 </head>
 <body>
   <div class="container">
+    <!-- Accessible page title for SEO -->
+    <h1 class="sr-only">TonyTrash — Valet Trash Service</h1>
+
     <!-- Logo Header -->
     <header class="logo-header">
-      <img src="VALETTRASH1.png" alt="Valet Trash Logo" class="logo-image"
-           onclick="gtag('event', 'click_logo', { event_category: 'navigation', event_label: 'Logo Header' });" />
+      <a href="/"
+         onclick="gtag('event', 'click_logo', { event_category: 'navigation', event_label: 'Logo Header' });"
+         aria-label="Go to homepage">
+        <img
+          src="logo.svg"
+          alt="TonyTrash Valet Trash"
+          width="500"
+          height="263"
+          class="logo-image"
+          decoding="async"
+          fetchpriority="high" />
+      </a>
     </header>
   </div>
 
-  <!-- Custom Pricing Section -->
-  <section class="pricing" id="pricing">
+  <!-- Pricing -->
+  <section class="pricing" id="pricing" aria-label="Pricing plans">
     <div class="plan">
-      <img src="basic-icon.png" alt="Basic Plan Icon" class="plan-icon">
+      <img src="basic-icon.png" alt="" class="plan-icon" loading="lazy" decoding="async" />
       <h2>Basic Valet Trash</h2>
       <p>One Pickup Every Thursday</p>
       <p class="price">$15 / month</p>
       <a href="https://buy.stripe.com/dRm4gA1k80NA73scL15kk06"
          class="subscribe-button"
-         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Basic Plan' });">
+         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Basic Plan' });"
+         aria-label="Start Basic plan trial for fifteen dollars per month">
          Start Trial
       </a>
     </div>
 
     <div class="plan highlight">
       <div class="badge">Most popular</div>
-      <img src="standard-icon.png" alt="Standard Plan Icon" class="plan-icon">
+      <img src="standard-icon.png" alt="" class="plan-icon" loading="lazy" decoding="async" />
       <h2>Standard Valet Trash</h2>
-      <p>Every Monday & Thursday</p>
+      <p>Every Monday &amp; Thursday</p>
       <p class="price">$20 / month</p>
       <a href="https://buy.stripe.com/14AaEYd2Q0NAcnM3ar5kk07"
          class="subscribe-button"
-         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Standard Plan' });">
+         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Standard Plan' });"
+         aria-label="Start Standard plan trial for twenty dollars per month">
          Start Trial
       </a>
     </div>
 
     <div class="plan">
-      <img src="premium-icon.png" alt="Premium Plan Icon" class="plan-icon">
+      <img src="premium-icon.png" alt="" class="plan-icon" loading="lazy" decoding="async" />
       <h2>Premium Valet Trash</h2>
-      <p>Every Monday, Thursday & Saturday</p>
+      <p>Every Monday, Thursday &amp; Saturday</p>
       <p class="price">$30 / month</p>
       <a href="https://buy.stripe.com/8x2aEYgf253Q2NcaCT5kk08"
          class="subscribe-button"
-         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Premium Plan' });">
+         onclick="gtag('event', 'click_subscribe', { event_category: 'checkout', event_label: 'Premium Plan' });"
+         aria-label="Start Premium plan trial for thirty dollars per month">
          Start Trial
       </a>
     </div>
   </section>
-  
-  <!-- Special Offer Text -->
-    <p style="text-align: center; font-size: 1rem; margin: 0; font-weight: bold; color: #000000;">
-  🎉 Try your first week FREE 🎉
-    </p>
 
-  <!-- Footer with FAQ Link -->
+  <!-- Special Offer Text (no extra spacing) -->
+  <p style="text-align:center; font-size:1rem; margin:0; font-weight:bold; color:#000">
+    🎉 Try your first week FREE 🎉
+  </p>
+
+  <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <p style="text-align: center; font-size: 0.9rem; color: #777; margin-bottom: 0.5rem;">
-        <a href="faq.html" style="color: #0074d4; text-decoration: none;"
+      <p style="text-align:center; font-size:0.9rem; color:#777; margin-bottom:0.5rem;">
+        <a href="faq.html" style="color:#0074d4; text-decoration:none;"
            onclick="gtag('event', 'click_faq', { event_category: 'navigation', event_label: 'FAQ Footer Link' });">
-           Frequently Asked Questions
+          Frequently Asked Questions
         </a>
       </p>
-      <p style="text-align: center; font-size: 0.9rem; color: #555; margin-bottom: 0.25rem;">
-        Contact: <a href="mailto:info@tonytrash.com" style="color: #0074d4; text-decoration: none;">info@tonytrash.com</a>
+      <p style="text-align:center; font-size:0.9rem; color:#555; margin-bottom:0.25rem;">
+        Contact: <a href="mailto:info@tonytrash.com" style="color:#0074d4; text-decoration:none;">info@tonytrash.com</a>
       </p>
-      <p style="text-align: center; font-size: 0.8rem; color: #aaa;">
+      <p style="text-align:center; font-size:0.8rem; color:#aaa;">
         © 2025 Tony Trash LLC
       </p>
     </div>
