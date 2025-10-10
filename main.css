@@ -37,7 +37,7 @@ body {
 }
 
 .logo-image {
-  width: 500px;     /* keeps logo same size on desktop */
+  width: 500px;
   height: auto;
   max-width: 100%;
   display: block;
@@ -126,7 +126,7 @@ body {
 }
 
 .badge {
-  position: absolute;   /* fixed typo */
+  position: absolute;
   top: -12px;
   left: 50%;
   transform: translateX(-50%);
@@ -164,8 +164,12 @@ body {
     align-items: center;
     margin-top: 0.5rem;
     padding-top: 0;
+    padding-bottom: 0.5rem; /* tighten gap to promo text */
   }
   .plan { width: 90%; } /* Full width on mobile */
+
+  /* promo line spacing: match 0.5rem gap to FAQ link */
+  .special-offer { margin-bottom: 0.5rem; }
 }
 
 /* Spotlight effect for highlighted plan on larger screens */
