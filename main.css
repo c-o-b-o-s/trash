@@ -37,9 +37,9 @@ body {
 }
 
 .logo-image {
-  /* Width/height set in HTML (500×263) to prevent layout shift */
-  max-width: 100%;
+  width: 500px;
   height: auto;
+  max-width: 100%;
   display: block;
   margin: 0 auto;
 }
@@ -111,8 +111,14 @@ body {
   outline: none;
 }
 
-.subscribe-button:hover { background-color: var(--brand-hover); }
-.subscribe-button:active{ transform: translateY(1px); }
+.subscribe-button:hover {
+  background-color: var(--brand-hover);
+}
+
+.subscribe-button:active{
+  transform: translateY(1px);
+}
+
 .subscribe-button:focus-visible{
   outline: 3px solid color-mix(in oklab, var(--brand) 60%, white);
   outline-offset: 2px;
@@ -157,8 +163,12 @@ body {
   .pricing {
     flex-direction: column;
     align-items: center;
+    margin-top: 0.25rem; /* reduced spacing below logo */
   }
   .plan { width: 90%; } /* Full width on mobile */
+  .logo-header {
+    margin-bottom: 0.25rem; /* reduced spacing above pricing */
+  }
 }
 
 /* Spotlight effect for highlighted plan on larger screens */
@@ -172,7 +182,7 @@ body {
   .plan:last-child  { order: 3; }
 }
 
-/* Reduced Motion: calmer interactions */
+/* Reduced Motion: keep things calm for sensitive users */
 @media (prefers-reduced-motion: reduce){
   * { animation: none !important; transition: none !important; }
   .plan:hover, .highlight { transform: none !important; }
