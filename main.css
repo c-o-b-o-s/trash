@@ -37,7 +37,7 @@ body {
 }
 
 .logo-image {
-  width: 500px;
+  width: 500px;     /* keeps logo same size on desktop */
   height: auto;
   max-width: 100%;
   display: block;
@@ -111,14 +111,8 @@ body {
   outline: none;
 }
 
-.subscribe-button:hover {
-  background-color: var(--brand-hover);
-}
-
-.subscribe-button:active{
-  transform: translateY(1px);
-}
-
+.subscribe-button:hover { background-color: var(--brand-hover); }
+.subscribe-button:active{ transform: translateY(1px); }
 .subscribe-button:focus-visible{
   outline: 3px solid color-mix(in oklab, var(--brand) 60%, white);
   outline-offset: 2px;
@@ -132,4 +126,61 @@ body {
 }
 
 .badge {
-  position: absolu
+  position: absolute;   /* fixed typo */
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--brand);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.footer a{ color: var(--link); }
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .pricing { gap: 15px; }
+  .plan { width: 45%; } /* 2 per row on tablets */
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding-top: 1rem;   /* mobile breathing room */
+    padding-bottom: 1rem;
+  }
+  .logo-header { margin-bottom: 1rem; }
+  .pricing {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    padding-top: 0;
+  }
+  .plan { width: 90%; } /* Full width on mobile */
+}
+
+/* Spotlight effect for highlighted plan on larger screens */
+@media (min-width: 900px) {
+  .highlight {
+    transform: scale(1.05);
+    z-index: 2;
+    order: 2; /* force highlight to middle in row of 3 */
+  }
+  .plan:first-child { order: 1; }
+  .plan:last-child  { order: 3; }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce){
+  * { animation: none !important; transition: none !important; }
+  .plan:hover, .highlight { transform: none !important; }
+}
