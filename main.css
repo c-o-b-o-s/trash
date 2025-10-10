@@ -160,15 +160,20 @@ body {
 }
 
 @media (max-width: 600px) {
+  .container {
+    padding-top: 0.25rem;   /* reduce container padding on mobile */
+    padding-bottom: 0.25rem;
+  }
+  .logo-header {
+    margin-bottom: 0;       /* no extra gap below logo */
+  }
   .pricing {
     flex-direction: column;
     align-items: center;
-    margin-top: 0; /* reduced spacing below logo */
+    margin-top: 0;          /* no extra margin above pricing */
+    padding-top: 0;         /* remove default top padding */
   }
   .plan { width: 90%; } /* Full width on mobile */
-  .logo-header {
-    margin-bottom: 0; /* reduced spacing above pricing */
-  }
 }
 
 /* Spotlight effect for highlighted plan on larger screens */
