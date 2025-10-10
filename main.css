@@ -163,11 +163,11 @@ body {
   .pricing {
     flex-direction: column;
     align-items: center;
-    margin-top: 0.25rem; /* reduced spacing below logo */
+    margin-top: 0; /* reduced spacing below logo */
   }
   .plan { width: 90%; } /* Full width on mobile */
   .logo-header {
-    margin-bottom: 0.25rem; /* reduced spacing above pricing */
+    margin-bottom: 0; /* reduced spacing above pricing */
   }
 }
 
