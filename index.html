@@ -137,14 +137,14 @@
             <span>⭐️⭐️⭐️⭐️⭐️</span>
           </div>
           <header class="review-header">
-            <img src="premium-icon.png" alt="" class="review-avatar">
+            <img src="basic-icon.png" alt="" class="review-avatar">
             <div class="review-author">
               <strong>Drew N.</strong>
               <span class="review-handle">MAA Resident</span>
             </div>
           </header>
           <p class="review-text">
-            Tony does a great job with customer service! He always sends reminders on pick up days and I really appreciate it. The convenience is outstanding!
+            Signed up for Standard and it’s been so convenient. Reminders help, and the hallway smells clean. Worth it.
           </p>
         </article>
 
@@ -153,10 +153,10 @@
             <span>⭐️⭐️⭐️⭐️⭐️</span>
           </div>
           <header class="review-header">
-            <img src="premium-icon.png" alt="" class="review-avatar">
+            <img src="standard-icon.png" alt="" class="review-avatar">
             <div class="review-author">
               <strong>Jordan C.</strong>
-              <span class="review-handle">MAA Resident</span>
+              <span class="review-handle">@jc_likes_clean</span>
             </div>
           </header>
           <p class="review-text">
@@ -164,7 +164,80 @@
           </p>
         </article>
 
-        
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Compact FAQ (Homepage) -->
+  <section class="faq-compact" id="home-faq" aria-label="Quick FAQ">
+    <div class="container">
+      <h2 class="faq-compact-title">Frequently Asked Questions</h2>
+
+      <div class="faq-accordion compact" id="faq-compact">
+        <!-- Q1 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hf-a1" id="hf-q1">
+            What are the days?
+          </button>
+          <div class="faq-answer" id="hf-a1" role="region" aria-labelledby="hf-q1" hidden>
+            <ul>
+              <li><strong>Basic:</strong> Every Thursday</li>
+              <li><strong>Standard:</strong> Every Monday and Thursday</li>
+              <li><strong>Premium:</strong> Every Monday, Thursday, and Saturday</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hf-a2" id="hf-q2">
+            Is there a set time?
+          </button>
+          <div class="faq-answer" id="hf-a2" role="region" aria-labelledby="hf-q2" hidden>
+            <p>Please set your trash outside of your door no earlier than 7pm and no later than 9pm on pickup days.</p>
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hf-a3" id="hf-q3">
+            Is my personal and payment information safe?
+          </button>
+          <div class="faq-answer" id="hf-a3" role="region" aria-labelledby="hf-q3" hidden>
+            <p>Yes. Payments are processed securely through Stripe. We never store your card details, and your personal information is kept private and encrypted.</p>
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hf-a4" id="hf-q4">
+            What is included?
+          </button>
+          <div class="faq-answer" id="hf-a4" role="region" aria-labelledby="hf-q4" hidden>
+            <p>All subscriptions include weekly trash services with text reminders on pickup days. We also spray a freshener in the hallway to keep things smelling clean.</p>
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hf-a5" id="hf-q5">
+            What if I forget to put my trash out?
+          </button>
+          <div class="faq-answer" id="hf-a5" role="region" aria-labelledby="hf-q5" hidden>
+            <p>Please hold onto it until the next pickup day. We can’t return outside the scheduled hours.</p>
+          </div>
+        </div>
+
+        <!-- Q6 -->
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false" aria-controls="hf-a6" id="hf-q6">
+            What is the cancellation policy?
+          </button>
+          <div class="faq-answer" id="hf-a6" role="region" aria-labelledby="hf-q6" hidden>
+            <p>There are no long-term contracts. You can manage or cancel your subscription anytime through our billing portal.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -186,5 +259,40 @@
       </p>
     </div>
   </footer>
+
+  <!-- Compact FAQ JS (single-open) -->
+  <script>
+    (function () {
+      const root = document.getElementById('faq-compact');
+      if (!root) return;
+      const buttons = Array.from(root.querySelectorAll('.faq-question'));
+
+      function closeAll() {
+        buttons.forEach(btn => {
+          btn.setAttribute('aria-expanded','false');
+          const panel = document.getElementById(btn.getAttribute('aria-controls'));
+          if (panel) panel.hidden = true;
+        });
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const isOpen = btn.getAttribute('aria-expanded') === 'true';
+          closeAll();
+          if (!isOpen) {
+            btn.setAttribute('aria-expanded','true');
+            const panel = document.getElementById(btn.getAttribute('aria-controls'));
+            if (panel) panel.hidden = false;
+          }
+        });
+
+        btn.addEventListener('keydown', (e) => {
+          const i = buttons.indexOf(btn);
+          if (e.key === 'ArrowDown') { e.preventDefault(); buttons[(i+1)%buttons.length].focus(); }
+          if (e.key === 'ArrowUp')   { e.preventDefault(); buttons[(i-1+buttons.length)%buttons.length].focus(); }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

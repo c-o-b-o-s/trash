@@ -174,6 +174,62 @@ body {
 .review-handle { color: var(--muted); font-size: 0.95rem; }
 .review-text { color: var(--text); line-height: 1.6; margin: 0; }
 
+/* --- Compact FAQ (Homepage) --- */
+.faq-compact { background: var(--bg); }
+.faq-compact .faq-compact-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 0 0 0.75rem;
+}
+
+.faq-accordion.compact { display: grid; gap: 12px; }
+.faq-accordion.compact .faq-item {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+/* Smaller, tighter buttons than full FAQ page */
+.faq-accordion.compact .faq-question {
+  appearance: none;
+  width: 100%;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  padding: 12px 40px 12px 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  position: relative;
+}
+.faq-accordion.compact .faq-question:focus-visible {
+  outline: 3px solid color-mix(in oklab, var(--brand) 60%, white);
+  outline-offset: 2px;
+}
+.faq-accordion.compact .faq-question::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) rotate(0deg);
+  transition: transform .2s ease;
+  font-size: 0.95rem;
+  color: #666;
+}
+.faq-accordion.compact .faq-question[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.faq-accordion.compact .faq-answer {
+  padding: 0 14px 12px;
+  color: var(--muted);
+}
+.faq-accordion.compact .faq-answer p,
+.faq-accordion.compact .faq-answer ul { margin: 0; line-height: 1.6; }
+
 /* Footer */
 .footer {
   margin-top: 1.5rem;
@@ -200,6 +256,7 @@ body {
   }
   .plan:first-child { order: 1; }
   .plan:last-child  { order: 3; }
+  .faq-compact { margin-bottom: 1rem; }
 }
 
 @media (max-width: 600px) {
@@ -217,8 +274,11 @@ body {
   }
   .plan { width: 90%; } /* Full width on mobile */
 
-  /* promo line spacing: match 0.5rem gap down to testimonials */
+  /* promo line spacing down to testimonials */
   .special-offer { margin-bottom: 0.5rem; }
+
+  /* keep homepage FAQ tight above footer on mobile */
+  .faq-compact { margin-bottom: 0.5rem; }
 }
 
 /* Reduced Motion */
