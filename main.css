@@ -259,26 +259,43 @@ body {
   .faq-compact { margin-bottom: 1rem; }
 }
 
+/* ---- MOBILE VIEW FIXED ---- */
 @media (max-width: 600px) {
   .container {
-    padding-top: 0.5rem;   /* mobile breathing room */
+    padding-top: 0.5rem;
     padding-bottom: 0.5rem;
   }
-  .logo-header { margin-bottom: 0.5rem; }
+
+  .logo-header {
+    margin-bottom: 0.5rem;
+  }
+
   .pricing {
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; /* let cards fill width like testimonials */
+    gap: 16px;
     margin-top: 0.5rem;
     padding-top: 0;
-    padding-bottom: 0.5rem; /* tighten gap to promo text */
+    /* match .container side padding so edges align */
+    padding-inline: clamp(1rem, 2vw, 1.5rem);
+    padding-bottom: 0.5rem;
   }
-  .plan { width: 92%; } /* Full width on mobile */
+
+  .plan {
+    width: 100%;           /* same width as review cards */
+    margin: 0;
+    box-sizing: border-box;
+  }
 
   /* promo line spacing down to testimonials */
-  .special-offer { margin-bottom: 0.5rem; }
+  .special-offer {
+    margin-bottom: 0.5rem;
+  }
 
   /* keep homepage FAQ tight above footer on mobile */
-  .faq-compact { margin-bottom: 0.5rem; }
+  .faq-compact {
+    margin-bottom: 0.5rem;
+  }
 }
 
 /* Reduced Motion */
