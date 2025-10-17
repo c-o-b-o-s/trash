@@ -139,18 +139,67 @@ body {
   white-space: nowrap;
 }
 
+/* --- Testimonials --- */
+.testimonials { background: var(--bg); }
+.reviews-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.review-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow-sm);
+  padding: 18px;
+}
+.review-stars {
+  font-size: 1.1rem;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.review-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.review-author { line-height: 1.2; }
+.review-handle { color: var(--muted); font-size: 0.95rem; }
+.review-text { color: var(--text); line-height: 1.6; margin: 0; }
+
 /* Footer */
 .footer {
   margin-top: 1.5rem;
   text-align: center;
 }
-
 .footer a{ color: var(--link); }
 
 /* Responsive Design */
 @media (max-width: 900px) {
   .pricing { gap: 15px; }
   .plan { width: 45%; } /* 2 per row on tablets */
+}
+
+@media (min-width: 900px) {
+  /* 2-column reviews on desktop */
+  .reviews-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .highlight {
+    transform: scale(1.05);
+    z-index: 2;
+    order: 2; /* force highlight to middle in row of 3 */
+  }
+  .plan:first-child { order: 1; }
+  .plan:last-child  { order: 3; }
 }
 
 @media (max-width: 600px) {
@@ -168,19 +217,8 @@ body {
   }
   .plan { width: 90%; } /* Full width on mobile */
 
-  /* promo line spacing: match 0.5rem gap to FAQ link */
+  /* promo line spacing: match 0.5rem gap down to testimonials */
   .special-offer { margin-bottom: 0.5rem; }
-}
-
-/* Spotlight effect for highlighted plan on larger screens */
-@media (min-width: 900px) {
-  .highlight {
-    transform: scale(1.05);
-    z-index: 2;
-    order: 2; /* force highlight to middle in row of 3 */
-  }
-  .plan:first-child { order: 1; }
-  .plan:last-child  { order: 3; }
 }
 
 /* Reduced Motion */
