@@ -272,7 +272,7 @@ body {
     padding-top: 0;
     padding-bottom: 0.5rem; /* tighten gap to promo text */
   }
-  .plan { width: 90%; } /* Full width on mobile */
+  .plan { width: 92%; } /* Full width on mobile */
 
   /* promo line spacing down to testimonials */
   .special-offer { margin-bottom: 0.5rem; }
